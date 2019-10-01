@@ -9,14 +9,14 @@ public class Main {
 
         int[] buffer = new int[size];
 
-        Producer prod = new Producer("prod", mutex, full, empty, buffer);
-        Consumer cons = new Consumer("cons", mutex, full, empty, buffer);
+        Producer producer = new Producer("prod", mutex, full, empty, buffer);
+        Consumer constomer = new Consumer("cons", mutex, full, empty, buffer);
 
-        prod.start();
-        cons.start();
+        producer.start();
+        constomer.start();
 
-        prod.join();
-        cons.join();
+        producer.join();
+        constomer.join();
 
         System.out.println("done");
 
